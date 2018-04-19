@@ -1,92 +1,79 @@
-# MyReads Project
+＃react-reading-track项目
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+## 安装使用
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+> ①`npm install`安装所有的项目依赖项
+> ②`npm start`启动开发服务器
 
-## TL;DR
-
-To get started developing right away:
-
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
-
-## What You're Getting
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+##文件目录
+```
+├──CONTRIBUTING.md
+├──README.md - 这个文件。
+├──SEARCH_TERMS.md＃可用搜索字词的白名单短集合，与应用程序一起使用。
+├──package.json＃npm包管理器文件。
+├──public
+│├──favicon.ico＃React Icon，如果您愿意，可以更改。
+│└──index.html＃不要修改
+└──src
+    ├──App.css＃应用的样式。随意自定义这个你想要的。
+    ├──App.js＃应用程序的根。现在包含静态HTML。
+    ├──App.test.js＃用于测试。随创建反应应用程序一起提供。鼓励测试，但不是必需的。
+    ├──BooksAPI.js＃提供的Udacity后端的JavaScript API。方法说明在。
+    ├──Book.js＃书本组件
+    ├──ListBook.js＃主页组件
+    ├──SearchPage.js＃搜索页组件
+    ├──icon＃为应用程序提供有用的图像。谨慎使用。
+    │├──add.svg
+    │├──arrow-back.svg
+    │└──arrow-drop-down.svg
+    ├──index.css＃全局样式。
+    └──index.js＃不需要修改这个文件。它仅用于DOM呈现。
 ```
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
 
-## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+##后端服务器
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
+提供的文件[`BooksAPI.js`]（src / BooksAPI.js）包含在后端执行必要操作所需的方法：
 
-### `getAll`
+* [`getAll`]（＃获取主页所有书本）
+* [`update`]（＃更新）
+* [`search`]（＃搜索）
 
-Method Signature:
+###`getAll`
 
-```js
+方法签名：
+
+```JS
 getAll()
 ```
 
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
+*返回一个Promise，该Promise解析为包含一组书对象的JSON对象。
+*此集合代表目前应用程序书架中的图书。
 
-### `update`
+###`update`
 
-Method Signature:
+方法签名：
 
-```js
+```JS
 update(book, shelf)
 ```
 
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+* book：至少包含`id`属性的`<Object>
+* shelf：`<String>`包含[“wantToRead”，“currentReading”，“read”]之一
+*返回一个Promise，该Promise解析为包含POST请求响应数据的JSON对象
 
-### `search`
+###`search`
 
-Method Signature:
+方法签名：
 
-```js
+```JS
 search(query)
 ```
 
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+*查询：`<String>`
+*返回一个Promise，该Promise解析为包含最多20个书籍对象集合的JSON对象。
+*这些书不知道他们在哪个书架上。他们只是原始结果。您需要确保图书在搜索页面上具有正确的状态。
 
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
-
-## Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+##重要
+后端API使用一组固定的缓存搜索结果，并限于一组特定的搜索项，可在[SEARCH_TERMS.md]（SEARCH_TERMS.md）中找到。该术语列表是仅适用于后端的术语，因此，如果您对Basket Weaving或Bubble Wrap的搜索没有返回任何结果，请不要感到惊讶。
