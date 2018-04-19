@@ -23,7 +23,7 @@
     ├──Book.js＃书本组件
     ├──ListBook.js＃主页组件
     ├──SearchPage.js＃搜索页组件
-    ├──icon＃为应用程序提供有用的图像。谨慎使用。
+    ├──icon＃为应用程序提供有用的图像。
     │├──add.svg
     │├──arrow-back.svg
     │└──arrow-drop-down.svg
